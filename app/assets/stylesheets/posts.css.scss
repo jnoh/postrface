@@ -1,0 +1,115 @@
+header {
+  position: absolute;
+  top: 0;
+  height: 24px;
+  margin-bottom: 10px;
+  left: 0;
+  right: 0;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      float: left;
+      margin-right: 15px;
+      
+      a {
+        color: white;
+      }
+    }
+  }
+  
+  background: black;
+  color: #ccc;
+  padding: 3px 10px;
+
+}
+
+.login, .register { float: left; width: 300px; }
+
+.field {margin-bottom: 10px;}
+
+.login form, .register form {
+  input[type=text],
+  input[type=password] {
+    padding: 5px 10px;
+    width: 200px;
+    background: black;
+    color: white;
+    border: 0;
+  }
+  
+}
+
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#content {
+  position: absolute;
+  top: 30px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 0 50px;
+  overflow-y: scroll;
+}
+
+/* typography */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: normal;
+  letter-spacing: normal;
+  line-height: 1.5em;
+}
+
+
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+	zoom: 1;
+}

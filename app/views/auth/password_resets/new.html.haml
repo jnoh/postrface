@@ -1,0 +1,10 @@
+.two-col
+  .explain
+    %h2 Lost your password?
+    %p We'll send instructions to your email address so that you can reset your password. 
+  = form_tag password_resets_path, :class => "single-field", :method => :post do
+    .field.single-field
+      = text_field_tag :email, "", :placeholder => "Email"
+      = submit_tag "Reset!"
+%hr
+      

@@ -1,0 +1,32 @@
+#footer
+  .container.clearfix
+    .two-col
+      #copyright © Spinlister 2011
+      %nav
+        %ul
+          %li= link_to 'about', about_path
+          %li= link_to 'jobs', "http://blog.spinlister.com/post/11624000913/hustlers-please-apply"
+          %li= link_to 'terms', terms_path
+          %li= link_to 'privacy', privacy_path
+          %li= link_to 'blog', "http://blog.spinlister.com"
+          %li= link_to 'contact', "mailto:hello@spinlister.com"
+    .one-col
+      #social-nav
+        %nav
+          %ul
+            %li
+              = link_to "http://facebook.com/spinlister" do
+                .facebook facebook
+- if Rails.env.production?
+  :javascript
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18799247-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  
