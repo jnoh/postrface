@@ -13,6 +13,7 @@ class Auth::SessionsController < ApplicationController
         format.html { redirect_back_or_to(@user, :notice => 'Login successful.') }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
+        @user = User.new
         format.html { flash.now[:alert] = "Log in failed."; render :action => "new" }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
       end

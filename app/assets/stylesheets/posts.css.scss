@@ -27,21 +27,55 @@ header {
 
 }
 
-.login, .register { float: left; width: 300px; }
+.post {
+  position: relative;
+}
+.actions {
+  position: absolute;
+  width: 40px;
+  left: -50px;
+  top: 0;
+  
+  a {
+    margin-top: 3px;
+    display: block;
+    text-align: right;
+  }
+}
+
+#editor {
+  margin-top: 20px;
+  form {
+    input[type=text],
+    textarea {
+      width: 100%;
+      background: #eee;
+      color: black;
+      font-size: 14px;
+    }
+    textarea {
+      height: 500px;
+    }
+  }
+}
+
+.login, .register { 
+  float: left; width: 300px; 
+  
+  form {
+    input[type=text],
+    input[type=password] {
+      padding: 5px 10px;
+      width: 200px;
+      background: black;
+      color: white;
+      border: 0;
+    }
+
+  }
+}
 
 .field {margin-bottom: 10px;}
-
-.login form, .register form {
-  input[type=text],
-  input[type=password] {
-    padding: 5px 10px;
-    width: 200px;
-    background: black;
-    color: white;
-    border: 0;
-  }
-  
-}
 
 
 a {

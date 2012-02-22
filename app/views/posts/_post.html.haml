@@ -1,3 +1,6 @@
 .post
   %h2= post.title
+  .actions
+    - if logged_in? and post.user == current_user
+      = link_to "edit", edit_post_path(post)
   = simple_format post.body

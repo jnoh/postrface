@@ -3,3 +3,5 @@
 #posts
   = render @posts
   = paginate @posts
+  - if logged_in? and @user == current_user and @posts.blank?
+    You have no posts yet.
