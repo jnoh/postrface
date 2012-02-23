@@ -5,4 +5,5 @@
       - if user.posts.blank?
         has not written yet
       - else
-        = "wrote #{time_ago_in_words user.posts.first.created_at} ago"
+        - post = user.posts.first
+        = "wrote #{link_to post.title, post} #{time_ago_in_words post.created_at} ago"
