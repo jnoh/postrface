@@ -6,4 +6,7 @@
         has not written yet
       - else
         - post = user.posts.first
-        = "wrote #{link_to post.title, post} #{time_ago_in_words post.created_at} ago"
+        wrote
+        = link_to post.title, post
+        = time_ago_in_words post.created_at
+        ago
