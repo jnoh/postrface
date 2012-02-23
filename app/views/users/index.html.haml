@@ -2,4 +2,7 @@
   - for user in @users
     .user
       = link_to user.username, user
-      = "wrote #{time_ago_in_words user.posts.first.created_at} ago"
+      - if user.posts.blank?
+        has not written yet
+      - else
+        = "wrote #{time_ago_in_words user.posts.first.created_at} ago"
