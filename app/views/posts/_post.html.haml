@@ -3,5 +3,5 @@
     - if logged_in? and post.user == current_user
       = link_to post.title, edit_post_path(post)
     - else
-      post.title
+      = post.title
   = simple_format post.body
