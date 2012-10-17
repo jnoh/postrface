@@ -6,19 +6,15 @@
           %li= msg
   .field
     = f.label :username
-    %br/
-    = f.text_field :username
+    = f.text_field :username, :placeholder => "username"
   .field
     = f.label :email
-    %br/
     = f.text_field :email
   .field
     = f.label :password
-    %br/
     = f.password_field :password
   .field
     = f.label :password_confirmation
-    %br/
     = f.password_field :password_confirmation
   .actions
     = f.submit :register, :class => "btn primary"
