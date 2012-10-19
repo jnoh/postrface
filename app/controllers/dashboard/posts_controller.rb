@@ -7,9 +7,9 @@ class Dashboard::PostsController < ApplicationController
   end
 
   def create
-
     if @post = current_user.posts.create(params[:post])
-      redirect_to @post, :alert => "Nice. New post." 
+      current_user.touch
+      redirect_to @post, :alert => "Nice. New post."
     else
       render :action => :edit
     end

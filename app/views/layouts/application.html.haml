@@ -6,17 +6,24 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header
+    %header.clearfix
       %ul.clearfix
-        - if logged_in?
-          %li
-            = link_to "VIMBLE", users_path
+        %li.title
+          = link_to "postrface", current_user
+          - unless @user.blank? or @user.new_record?
             &#x2192;
-            = link_to current_user.username, current_user
-          %li= link_to "write new", new_post_path
+            = link_to @user.username, @user
+        %li= link_to "write", new_post_path
         - if logged_in?
-          %li= link_to "Log out", logout_path
+          %li= link_to "logout", logout_path
         - else
-          %li= link_to "Log in", login_path
+          %li= link_to "login", login_path
+      %ul#writers
+        - for writer in @writers
+          - if writer.posts.any?
+            %li
+              = link_to writer do
+                %span.username= writer.username
+                %span.postname= writer.posts.first.title
     %section#content
       = yield

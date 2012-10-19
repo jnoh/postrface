@@ -1,13 +1,12 @@
 header {
-  position: absolute;
-  top: 0;
+  width: 140px;
   height: 24px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   left: 0;
   right: 0;
   color: #ccc;
-  border-bottom: 1px solid #eee;
-  padding: 3px 10px;
+  padding: 3px 20px;
 
   ul {
     list-style: none;
@@ -15,15 +14,43 @@ header {
     margin: 0;
 
     li {
-      float: left;
-      margin-right: 15px;
 
+      &.title {
+        margin-bottom: 10px;
+      }
       a {
         color: #000;
       }
     }
   }
 
+  #writers {
+    padding: 10px 0;
+
+    li {
+      font-size: 11px;
+      .username {color: #999; font-weight:bold}
+      .postname {color: #000;}
+    }
+  }
+}
+
+#writers {
+}
+
+#content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 150px;
+  right: 0px;
+  padding: 20px 100px;
+  min-width: 600px;
+  overflow-y: scroll;
+}
+
+.right {
+  float: right;
 }
 
 .post {
@@ -99,15 +126,6 @@ a:hover {
   }
 }
 
-#content {
-  position: absolute;
-  top: 30px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  padding: 0 300px;
-  overflow-y: scroll;
-}
 
 /* typography */
 

@@ -4,12 +4,10 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-
   has_many :posts
 
-
   before_validation :trim_and_downcase_username, :on => :create
-  
+
   username_regex = /\A[A-Za-z0-9_]+\z/
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
