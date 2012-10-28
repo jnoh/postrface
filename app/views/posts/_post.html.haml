@@ -1,12 +1,19 @@
 .post
   %h2
-    %span.title
-      = post.title
-    - if with_username
-      %span.username
-        &larr;
-        = post.user.username
+    = link_to post do
+      %span.title
+        - if post.root?
+          = post.title
+        - else
+          = post.root.title
+      - if with_username
+        %span.username
+          - if post.root?
+            &larr;
+          - else
+            &crarr;
+          = post.user.username
+  = simple_format post.body
   %p
     - if logged_in? and post.user == current_user
       = link_to "edit", edit_post_path(post)
-  = simple_format post.body

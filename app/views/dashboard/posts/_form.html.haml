@@ -1,10 +1,16 @@
 #editor
   = form_for @post do |f|
+    = f.hidden_field :parent_id
     .fields
-      .field
-        = f.label :title
-        %br/
-        = f.text_field :title
+      - if @post.parent.nil?
+        .field
+          = f.label :title
+          %br/
+          = f.text_field :title
+      - else
+        %strong
+          in response to
+          = @post.parent.title
 
       .field
         = f.label :body

@@ -4,6 +4,7 @@ class Dashboard::PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.parent = Post.find(params[:respond])
   end
 
   def create

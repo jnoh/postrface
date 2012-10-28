@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 
   acts_as_nested_set
 
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :parent_id
 
   belongs_to :user
   validates :body, :presence => true

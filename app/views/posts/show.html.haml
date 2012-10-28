@@ -1,2 +1,2 @@
 %h1.back= link_to "#{@post.user.username}", @post.user
-= render @post
+= render :partial => "post", :object => @post, :locals => {:with_username => false}
