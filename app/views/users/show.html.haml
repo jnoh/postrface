@@ -1,7 +1,7 @@
 %h1= @user.username
 
 #posts
-  = render @posts
+  = render :partial => "posts/post", :collection => @posts, :locals => {:with_username => false}
   = paginate @posts
   - if logged_in? and @user == current_user and @posts.blank?
     You have no posts yet.

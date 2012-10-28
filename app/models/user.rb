@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => email_regex
 
   validates_length_of :password, :minimum => 6, :message => "must be at least 6 characters long", :if => :password
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
 
   private
 
