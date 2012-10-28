@@ -1,2 +1,6 @@
 %h1.back= link_to "#{@post.user.username}", @post.user
 = render :partial => "post", :object => @post, :locals => {:with_username => false}
+- if logged_in?
+  %p
+    = link_to new_post_path(:respond => @post.id) do
+      &crarr;
