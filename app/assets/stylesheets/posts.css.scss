@@ -55,6 +55,12 @@ header {
   position: relative;
   width: 650px;
   padding-bottom: 20px;
+
+  h2 {
+    font-size: 16px;
+    .username {color: #999; }
+    .postname {color: #000;}
+  }
 }
 
 
