@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 # db
 gem 'pg'
+gem 'awesome_nested_set'
 
 # auth
 gem 'sorcery'
