@@ -1,9 +1,9 @@
 .post
   %h2
+    = post.title
     - if with_username
       = post.user.username
-      &rarr;
-    = post.title
+      &larr;
   %p
     - if logged_in? and post.user == current_user
       = link_to "edit", edit_post_path(post)
