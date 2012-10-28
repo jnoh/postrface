@@ -9,12 +9,10 @@
     %header.clearfix
       %ul.clearfix
         %li.title
-          = link_to "postrface", current_user
-          - unless @user.blank? or @user.new_record?
-            &#x2192;
-            = link_to @user.username, @user
+          = link_to "postrface", root_path
         %li= link_to "write", new_post_path
         - if logged_in?
+          %li= link_to "me", current_user
           %li= link_to "logout", logout_path
         - else
           %li= link_to "login", login_path

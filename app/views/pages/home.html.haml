@@ -1,0 +1,3 @@
+#posts
+  = render :partial => "posts/post", :collection => @posts, :locals => {:with_username => true}
+  = paginate @posts

@@ -1,8 +1,8 @@
 class Auth::SessionsController < ApplicationController
-  
+
   before_filter :check_not_logged_in, :except => :destroy
   before_filter :require_login, :only => :destroy
-  
+
   def new
     @user = User.new
   end
@@ -28,8 +28,8 @@ class Auth::SessionsController < ApplicationController
   private
 
     def check_not_logged_in
-      redirect_to current_user if logged_in?
+      redirect_to home_path if logged_in?
     end
-  
-  
+
+
 end

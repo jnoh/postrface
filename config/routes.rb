@@ -1,7 +1,7 @@
 Minimal::Application.routes.draw do
-  root :to => "auth/sessions#new"
+  root :to => "pages#home"
 
-  
+  get :home, :to => "pages#home"
 
   scope :module => :dashboard do
     resources :posts, :except => [:index, :show]
@@ -19,7 +19,7 @@ Minimal::Application.routes.draw do
         match :confirmation
       end
     end
-    
+
     resources :registrations
 
   end
