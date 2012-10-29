@@ -7,12 +7,12 @@ class Post < ActiveRecord::Base
   belongs_to :user
   validates :body, :presence => true
 
-  after_create :mail_parent, :if => :child?
+  after_create :mail_parent
 
   default_scope :order => "created_at DESC"
 
   def mail_parent
-    PostMailer.replied_at(self).deliver
+    PostMailer.replied_at(self).deliver if child?
   end
 
 end
