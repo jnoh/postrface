@@ -19,7 +19,6 @@ Minimal::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-  config.assets.initialize_on_precompile = false
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
@@ -58,4 +57,6 @@ Minimal::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.action_mailer.default_url_options = { :host => "postrface.com" }
 end
