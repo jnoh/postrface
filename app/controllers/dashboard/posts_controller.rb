@@ -34,6 +34,6 @@ class Dashboard::PostsController < ApplicationController
 
     def is_allowed?
       @post = Post.find(params[:id])
-      redirect_to(current_user, :alert => "You can't do that...") unless current_user = @post.user 
+      redirect_to(current_user, :alert => "You can't do that...") unless current_user = @post.user
     end
 end
